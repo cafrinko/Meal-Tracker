@@ -1,0 +1,21 @@
+{
+  "name": "ping-pong",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ping-pong JS Week 1 Weekend"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prompt": "^1.0.0"
+  }
+}
