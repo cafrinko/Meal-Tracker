@@ -7,11 +7,7 @@ import { Food } from './food.model';
   inputs: ['foodList'],
   outputs: ['onFoodSelect'],
   directives: [FoodComponent],
-  template: `
-  <food-display *ngFor="#currentFood of foodList" (click)="foodClicked(currentFood)"
-    [class.selected]="currentFood === selectedFood" [food]="currentFood">
-  </food-display>
-  `
+  templateUrl: 'app/food-list.component.html'
 })
 export class FoodListComponent {
   public foodList: Food[];
