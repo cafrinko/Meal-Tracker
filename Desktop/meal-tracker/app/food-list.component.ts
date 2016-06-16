@@ -2,12 +2,13 @@ import { Component, EventEmitter } from 'angular2/core';
 import { FoodComponent } from './food.component';
 import { Food } from './food.model';
 import { EditFoodDetailsComponent } from './edit-food-details.component';
+import { NewFoodComponent } from './new-food.component';
 
 @Component({
   selector: 'food-list',
   inputs: ['foodList'],
   outputs: ['onFoodSelect'],
-  directives: [FoodComponent, EditFoodDetailsComponent],
+  directives: [FoodComponent, EditFoodDetailsComponent, NewFoodComponent],
   templateUrl: 'app/food-list.component.html'
 })
 export class FoodListComponent {
@@ -21,5 +22,10 @@ export class FoodListComponent {
     console.log('child', clickedFood);
     this.selectedFood = clickedFood;
     this.onFoodSelect.emit(clickedFood);
+  }
+  createFood(name: string, description: string, calories: number): void {
+    this.foodList.push(
+      new Food(name, this.foodList.length, description, calories)
+    );
   }
 }
