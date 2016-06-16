@@ -23,9 +23,8 @@ export class FoodListComponent {
     this.selectedFood = clickedFood;
     this.onFoodSelect.emit(clickedFood);
   }
-  createFood(name: string, description: string, calories: number): void {
-    this.foodList.push(
-      new Food(name, this.foodList.length, description, calories)
-    );
-  }
+  createFood(newFood: Food): void {
+    newFood.id = this.foodList.length;
+    this.foodList.push(newFood);
+  };
 }
