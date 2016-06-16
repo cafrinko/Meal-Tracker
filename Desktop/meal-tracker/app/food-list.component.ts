@@ -3,11 +3,13 @@ import { FoodComponent } from './food.component';
 import { Food } from './food.model';
 import { EditFoodDetailsComponent } from './edit-food-details.component';
 import { NewFoodComponent } from './new-food.component';
+import { CaloriePipe } from './calorie.pipe';
 
 @Component({
   selector: 'food-list',
   inputs: ['foodList'],
   outputs: ['onFoodSelect'],
+  pipes: [CaloriePipe],
   directives: [FoodComponent, EditFoodDetailsComponent, NewFoodComponent],
   templateUrl: 'app/food-list.component.html'
 })
@@ -15,6 +17,7 @@ export class FoodListComponent {
   public foodList: Food[];
   public onFoodSelect: EventEmitter<Food>;
   public selectedFood: Food;
+  public filterCalorie: string = "all";
   constructor() {
     this.onFoodSelect = new EventEmitter();
   }
@@ -26,5 +29,9 @@ export class FoodListComponent {
   createFood(newFood: Food): void {
     newFood.id = this.foodList.length;
     this.foodList.push(newFood);
+  }
+  onChange(filterOption) {
+    this.filterCalorie = filterOption;
+    console.log(this.filterCalorie);
   };
 }

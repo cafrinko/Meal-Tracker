@@ -1,4 +1,10 @@
-<food-display *ngFor="#currentFood of foodList"   (click)="foodClicked(currentFood)"
+<select (change)="onChange($event.target.value)">
+  <option value="all" selected="selected">Show All</option>
+  <option value="high">Show High Calorie Foods (500 or more)</option>
+  <option value="low">Show Low Calorie Foods (less than 500)</option>
+</select>
+<br>
+<food-display *ngFor="#currentFood of foodList | calorie:filterCalorie" (click)="foodClicked(currentFood)"
   [class.selected]="currentFood === selectedFood" [food]="currentFood">
 </food-display>
 <edit-food-details *ngIf="selectedFood" [food]="selectedFood">
