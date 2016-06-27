@@ -6,20 +6,20 @@
 
 ## Description
 
-_This application allows a user to view questions posted on a message board on the homepage, or add a question on the homepage. The user can click on a question that links to a page to view options for editing and deleting that question or adding comments to it._
+_This application allows a user to log foods they've eaten, along with a description and # of calories in the foods. The user can also filter by high (above 500) and low (500 and below) calorie foods._
 
 ## Setup/Installation Requirements
 
 * Clone cafrinko's GitHub Meal-Tracker-App repository
 * Install node packages and dependencies for the Angular2 environment using the following commands:
-  * npm install
-  * bower install
-  Install globals if needed
+  * install globals if needed
     * npm install gulp -g
     * npm install bower -g
     * gem install sass
     * npm install typescript -g
     * apm install atom-typescript
+  * npm install
+  * bower install
   * gulp build
   * gulp serve
 * Anytime after editing the code, run gulp build, then gulp serve. Even though gulp build will run anytime you run gulp serve, run gulp build anyway from the perspective of healthy skepticism.
